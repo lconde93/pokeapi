@@ -2,18 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
 import 'materialize-css';
-import { MaterializeModule, MaterializeDirective } from 'angular2-materialize';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Route } from '@angular/router';
-import { HttpModule } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
 
+import { UsersModule } from './users/users.module';
+import { SharedModule } from '../app/shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 
 const routes: Route[] = [
@@ -29,16 +28,13 @@ const routes: Route[] = [
 		HomeComponent,
 		PokemonComponent,
 		NavbarComponent,
-		PokemonDetailComponent,
+		PokemonDetailComponent,		
 	],
 	imports: [
-		BrowserModule,
-		MaterializeModule,
-		FormsModule,
-		ReactiveFormsModule,
-		HttpModule,
-		HttpClientModule,
-		RouterModule.forRoot(routes)
+		BrowserModule,	
+		SharedModule,
+		RouterModule.forRoot(routes),
+		UsersModule		
 	],
 	providers: [],
 	bootstrap: [AppComponent]

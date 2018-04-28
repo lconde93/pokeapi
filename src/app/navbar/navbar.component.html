@@ -1,0 +1,39 @@
+<div class="navbar-fixed">
+
+
+	<nav class="">
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">{{ title }}</a>
+			<a href="#" data-activates="mobile-demo" class="button-collapse hide-on-large-only" materialize="sideNav">
+				<i class="material-icons">menu</i>
+			</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li>
+					<a [routerLink]="['/home']">Home</a>
+				</li>
+				<li>
+					<a [routerLink]="['/pokemon']">Pokedex</a>
+				</li>
+			</ul>
+		</div>
+		<!-- <div class="nav-content">
+			<ul class="tabs tabs-transparent" materialize="tabs">
+				<li class="tab">
+					<a [routerLink]="['/home']" [routerLinkActive]="'active'">Home</a>
+				</li>
+				<li class="tab">
+					<a [routerLink]="['/pokemon']" [routerLinkActive]="'active'">Pokedex</a>
+				</li>			
+			</ul>
+		</div> -->
+	</nav>
+</div>
+
+<ul class="side-nav fixed hide-on-large-only" id="mobile-demo" >
+	<li>
+		<a [routerLink]="['/home']" [routerLinkActive]="'active'">Home</a>
+	</li>
+	<li>
+		<a [routerLink]="['/pokemon']" [routerLinkActive]="'active'">Pokedex</a>
+	</li>
+</ul>

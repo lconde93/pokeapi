@@ -1,0 +1,21 @@
+{
+  "name": "angular-project assets",
+  "homepage": "https://github.com/lconde93/pokeapi",
+  "authors": [
+    "Luis Antonio Conde Vazquez <lconde@e-bitware.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.100.2"
+  }
+}

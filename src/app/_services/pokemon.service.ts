@@ -8,16 +8,19 @@ import { API_URL } from '../app.constants';
 @Injectable()
 export class PokemonService {
 
-  urlService: string = API_URL;
-  constructor(private _http: Http, private _httpClient: HttpClient) { }
+	urlService: string = API_URL;
+	constructor(private _http: Http, private _httpClient: HttpClient) { }
 
-  get(): Observable<any> {
-    return this._httpClient.get(this.urlService + 'pokemon'/*, {headers: new Headers({'Content-Type': 'application/json'})}*/);
-/*       .map((res: any) => {
-        res.json();
-      }).catch((error) => {
-        return Observable.throw(JSON.parse(error._body) || error);
-      });
- */
-  }
+	get(options: any = { offset: 0, limit: 20 }): Observable<any> {
+		return this._httpClient.get(`${this.urlService}pokemon?offset=${options.offset}&limit=${options.limit}`);
+
+	}
+
+	getDetail(id: number): Observable<any> {
+		return this._httpClient.get(`${this.urlService}pokemon/${ id }`);
+	}
+
+	getCharacteristics(id: number): Observable<any> {
+		return this._httpClient.get(`${ this.urlService }characteristic/${ id }`);
+	}
 }
